@@ -1,0 +1,129 @@
+.bottom-margin {
+    margin-bottom: 25px;
+}
+
+.searchbar {
+    width:100%;
+}
+
+#answered {
+    background-color : rgb(78, 178, 78);
+    color: white;
+}
+
+
+#unanswered {
+    background-color : rgb(237, 37, 37);
+    color: white;
+}
+
+.search-button {
+    margin-top: 10px;
+    background-color: rgb(86, 159, 255);
+    color: white;
+}
+
+
+#institution {
+    background-color: rgb(24, 197, 249);
+    color: white;
+}
+
+#date {
+    background-color: rgb(235, 163, 0);
+    color: white;
+
+}
+
+#popularity {
+    background-color: rgb(221, 0, 114);
+    color: white;
+
+}
+
+#domain {
+    background-color: rgb(162, 0, 222);
+    color: white;
+
+}
+
+.ask-button {
+    font-size: 1.2vw;
+    margin-left: 20px;
+    background-color: rgb(86, 159, 255);
+    color: white;
+}
+
+#all {
+    background-color: rgb(162, 0, 222);
+    color: white;
+}
+
+#date {
+    background-color: rgb(235, 163, 0);
+    color: white;
+
+}
+
+#popularity {
+    background-color: rgb(221, 0, 114);
+    color: white;
+
+}
+
+#domain {
+    background-color: rgb(162, 0, 222);
+    color: white;
+
+}
+.vl {
+    border-left: 1px solid lightgray;
+    height: 100px;
+    width: 1px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.question-infos {
+    text-align: center;
+}
+
+.avatar {
+    margin-right:0px;
+}
+
+.uni-thumbnail {
+    text-align: center;
+
+    .avatar {
+        margin-top: 5px;
+        margin-bottom: 10px;        }
+    .id {
+        margin-top: 5px;
+        margin-bottom: 7px;
+    }
+
+    .domain {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+}
+
+.mat-card.no-padding {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.mat-card.no-top-padding {
+    padding-top: 5px;
+}
+
+h2 {
+    font-size: 1.2vw;
+}
+.mat-card-subtitle {
+    font-size: 1vw;
+}

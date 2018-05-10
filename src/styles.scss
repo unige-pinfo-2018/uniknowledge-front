@@ -1,0 +1,13 @@
+// Import UniKnowledge main library
+@import "app/core/scss/core";
+
+button,
+input[type=button] {
+
+    text-transform: uppercase;
+    
+}
+
+.mat-menu-item {
+    text-transform: capitalize;
+}

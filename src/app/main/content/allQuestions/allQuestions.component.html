@@ -1,0 +1,128 @@
+<div class="page-layout blank p-24" uniKnowledgePerfectScrollbar>
+
+    <!-- Search Bar Section-->
+    <div fxLayoutAlign="center start">
+        <mat-card fxFlex="column" class="bottom-margin">
+
+            <div fxFlex flexLayout="column" fxLayoutAlign="space-evenly start">
+
+                <!-- Search Part -->
+                <div fxFlex="30%" fxLayout="column" flexLayoutAlign="center">
+                    <mat-card-title>
+                        <h1>{{'ALL_QUESTIONS.SEARCH_QUESTION' | translate}}</h1>
+                    </mat-card-title>
+                    <div fxLayout="row">
+                        <mat-form-field class="searchbar">
+                            <input matInput placeholder="{{'ALL_QUESTIONS.SEARCHBAR_PLACEHOLDER' | translate}}">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <button mat-raised-button class="search-button">
+                            {{'ALL_QUESTIONS.SEARCH_BUTTON' | translate}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter Part-->
+                <div fxFlex="40%" fxLayout="column" flexLayoutAlign="center">
+                    <mat-card-title>
+                        <h1>{{'ALL_QUESTIONS.FILTER_BY' | translate}}</h1>
+                    </mat-card-title>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <button mat-raised-button id="institution">Institution</button>
+                        <button mat-raised-button id="date">Date</button>
+                        <button mat-raised-button id="popularity">Popularity</button>
+                        <button mat-raised-button id="domain">Domain</button>
+                    </div>
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+
+
+    <div fxLayoutAlign="space-between end">
+
+        <!-- All Questions Section-->
+        <div fxFlex="100%" fxFlexAlign="start">
+
+            <!-- Title + Ask Question Button Section-->
+            <div fxLayoutAlign="start center">
+                <h1>{{'ALL_QUESTIONS.ALL_QUESTIONS' | translate}}</h1>
+
+                <div fxLayoutAlign="start start">
+                    <button mat-raised-button class="ask-button">
+                        {{'ALL_QUESTIONS.ASK_BUTTON' | translate}}
+                    </button>
+                </div>
+            </div>
+
+            <!-- Questions List Section-->
+            <div>
+
+                <!-- Question Item-->
+                <mat-card class="no-padding" fxFlex="97%" fxLayoutAlign="space-between center">
+
+                    <!-- Institution Thumbnail Sub-Section-->
+                    <div class="uni-thumbnail">
+                        <img class="avatar" src="assets/images/avatars/profile.jpg">
+                        <span class="id">
+                            <strong>UNI</strong>
+                        </span>
+                        <span class="domain">Domain</span>
+                    </div>
+
+                    <div class="vl"></div>
+
+                    <!-- Question Sub-Section-->
+                    <div fxFlex="80%">
+                        <mat-card-title>
+                            <h2>How would you implement a Tower Of Hanoi Problem in Python ?</h2>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...
+                        </mat-card-subtitle>
+                    </div>
+
+                    <div class="vl"></div>
+
+                    <!-- Asked By Sub-Section-->
+                    <div fxFlex="15%" class="question-infos">
+                        <mat-card-title>
+                            <h2>Asked By</h2>
+                        </mat-card-title>
+                        <mat-card-subtitle>Domain</mat-card-subtitle>
+                    </div>
+
+                    <div class="vl"></div>
+
+                    <!-- Answers Infos Sub-Section-->
+                    <div fxFlex class="question-infos">
+                        <mat-card-title>
+                            <h2>2</h2>
+                        </mat-card-title>
+                        <mat-card-subtitle>Answers</mat-card-subtitle>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+
+
+        <!-- Can you Answer Section-->
+        <div fxFlex="40%" fxFlexAlign="start">
+            <div>
+                <h1>CAN YOU ANSWER ...</h1>
+            </div>
+            <div>
+                <mat-card class="no-top-padding" fxFlex="100%">
+                    <mat-card-title>
+                        <h2>Titre Question</h2>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...
+                    </mat-card-subtitle>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
