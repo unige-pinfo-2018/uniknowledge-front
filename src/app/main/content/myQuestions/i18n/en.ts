@@ -16,6 +16,10 @@ export const locale = {
             'ASKED_BY': 'Asked by',
             'MY_QUESTIONS': 'My Questions',
             'SHOW_ONLY': 'Show Only',
+            'ASK': 'Ask',
+            'CANCEL': 'Cancel',
+            'TITLE_PLACEHOLDER': 'Question Title',
+            'DESCRIPTION_PLACEHOLDER': 'Question Description',
         }
     }
 };

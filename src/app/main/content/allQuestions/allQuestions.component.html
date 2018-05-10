@@ -51,7 +51,7 @@
                 <h1>{{'ALL_QUESTIONS.ALL_QUESTIONS' | translate}}</h1>
 
                 <div fxLayoutAlign="start start">
-                    <button mat-raised-button class="ask-button">
+                    <button (click)="openAskQuestion()" mat-raised-button class="ask-button">
                         {{'ALL_QUESTIONS.ASK_BUTTON' | translate}}
                     </button>
                 </div>
@@ -62,17 +62,6 @@
 
                 <!-- Question Item-->
                 <mat-card class="no-padding" fxFlex="97%" fxLayoutAlign="space-between center">
-
-                    <!-- Institution Thumbnail Sub-Section-->
-                    <div class="uni-thumbnail">
-                        <img class="avatar" src="assets/images/avatars/profile.jpg">
-                        <span class="id">
-                            <strong>UNI</strong>
-                        </span>
-                        <span class="domain">Domain</span>
-                    </div>
-
-                    <div class="vl"></div>
 
                     <!-- Question Sub-Section-->
                     <div fxFlex="80%">

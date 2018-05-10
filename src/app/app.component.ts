@@ -4,9 +4,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { UniKnowledgeTranslationLoaderService } from './core/services/translation-loader.service';
 
 import { UniKnowledgeNavigationService } from './core/components/navigation/navigation.service';
-import { UniKnowledgeNavigationModel } from './navigation/navigation.model';
-import { locale as navigationEnglish } from './navigation/i18n/en';
-import { locale as navigationFrench } from './navigation/i18n/fr';
 
 @Component({
     selector   : 'uniKnowledge-root',
@@ -31,10 +28,5 @@ export class AppComponent
         // Use a language
         this.translate.use('en');
 
-        // Set the navigation model
-        this.uniKnowledgeNavigationService.setNavigationModel(new UniKnowledgeNavigationModel());
-
-        // Set the navigation translations
-        this.uniKnowledgeTranslationLoader.loadTranslations(navigationEnglish, navigationFrench);
     }
 }

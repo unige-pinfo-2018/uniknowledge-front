@@ -8,6 +8,10 @@ export const locale = {
             'ASK_BUTTON': 'Poser une Question',
             'ALL_QUESTIONS': 'Toutes les Questions',
             'FILTER_BY': 'Filtrer par',
+            'ASK': 'Poser',
+            'CANCEL': 'Annuler',
+            'TITLE_PLACEHOLDER': 'Titre de la Question',
+            'DESCRIPTION_PLACEHOLDER': 'Description de la Question'
         }
     }
 };

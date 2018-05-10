@@ -31,14 +31,18 @@
         width: 75%;
     }
 
+    .credits-icon {
+        height: 35px;
+        margin-right: 20px;
+    }
+
+
     #uni-infos {
         margin-left: 2%;
         font-size: 1.3vw;
     }
     .user-button,
-    uniKnowledge-search-bar,
-    .language-button,
-    .quick-panel-toggle-button {
+    .language-button {
         min-width: 64px;
         height: 64px;
 

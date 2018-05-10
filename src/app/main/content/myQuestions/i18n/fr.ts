@@ -16,6 +16,10 @@ export const locale = {
             'ASKED_BY': 'Posée par',
             'MY_QUESTIONS': 'Mes Questions',
             'SHOW_ONLY': 'Montrer seulement',
+            'ASK': 'Poser',
+            'CANCEL': 'Annuler',
+            'TITLE_PLACEHOLDER': 'Titre de la Question',
+            'DESCRIPTION_PLACEHOLDER': 'Description de la Question'
         }
     }
 };

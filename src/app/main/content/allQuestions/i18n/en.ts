@@ -7,7 +7,11 @@ export const locale = {
             'SEARCH_BUTTON': 'Search',
             'ASK_BUTTON': 'Ask a Question',
             'ALL_QUESTIONS': 'All Questions',
-            'FILTER_BY': 'Filter by'
+            'FILTER_BY': 'Filter by',
+            'ASK': 'Ask',
+            'CANCEL': 'Cancel',
+            'TITLE_PLACEHOLDER': 'Question Title',
+            'DESCRIPTION_PLACEHOLDER': 'Question Description',
         }
     }
 };

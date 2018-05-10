@@ -1,13 +1,13 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { SharedModule } from '../../../core/modules/shared.module';
 
 import { UniKnowledgeAllQuestionsComponent } from './allQuestions.component';
+import { AskQuestionDialogComponent } from './askQuestionDialog.component';
 
 const routes = [
     {
-        path     : 'questions',
+        path: 'questions',
         component: UniKnowledgeAllQuestionsComponent
     }
 ];
@@ -15,17 +15,19 @@ const routes = [
 @NgModule({
     declarations: [
         UniKnowledgeAllQuestionsComponent,
+        AskQuestionDialogComponent
     ],
-    imports     : [
+    imports: [
         SharedModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
     ],
-    exports     : [
+    exports: [
         UniKnowledgeAllQuestionsComponent
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    entryComponents:    [AskQuestionDialogComponent]
 })
 
-export class UniKnowledgeAllQuestionsModule
-{
+export class UniKnowledgeAllQuestionsModule {
+
 }

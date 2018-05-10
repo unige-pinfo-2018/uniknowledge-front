@@ -1,9 +1,9 @@
-<mat-toolbar class="p-0 mat-elevation-z1">
+<mat-toolbar style="height:90px;" class="p-0 mat-elevation-z1">
         <div fxFlex fxFill fxLayout="row" fxLayoutAlign="space-between center">
            <!-- University Infos -->
            <div fxLayoutAlign="center" id="uni-infos">
-              <img class="avatar" src="assets/images/avatars/profile.jpg">
-              <span class="username mr-12" fxHide fxShow.gt-sm>University</span>
+              <img class="credits-icon" src="assets/icons/credits.svg">
+              <span style="font-size:25px;" fxHide fxShow.gt-sm>125</span>
            </div>
            <!-- Logo Infos -->
            <div fxLayout="row" fxLayoutAlign="center">
@@ -16,7 +16,6 @@
                     class="user-button">
                     <img class="avatar" src="assets/images/avatars/profile.jpg">
                     <span class="username mr-12" fxHide fxShow.gt-sm>John Doe</span>
-                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
                  </button>
                  <mat-menu  #userMenu="matMenu" [overlapTrigger]="false">
                  <button mat-menu-item>

@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../core/modules/shared.module';
 
 import { UniKnowledgeMyQuestionsComponent } from './myQuestions.component';
-
+import { AskQuestionDialogComponent } from './askQuestionDialog.component';
 const routes = [
     {
         path     : 'my/questions',
@@ -15,6 +15,7 @@ const routes = [
 @NgModule({
     declarations: [
         UniKnowledgeMyQuestionsComponent,
+        AskQuestionDialogComponent
     ],
     imports     : [
         SharedModule,
@@ -23,7 +24,8 @@ const routes = [
     exports     : [
         UniKnowledgeMyQuestionsComponent
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    entryComponents:    [AskQuestionDialogComponent]
 })
 
 export class UniKnowledgeMyQuestionsModule

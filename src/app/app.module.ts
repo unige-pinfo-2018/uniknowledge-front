@@ -12,9 +12,9 @@ import { UniKnowledgeConfigService } from './core/services/config.service';
 import { UniKnowledgeNavigationService } from './core/components/navigation/navigation.service';
 import { UniKnowledgeAllQuestionsModule } from './main/content/allQuestions/allQuestions.module';
 import { UniKnowledgeMyQuestionsModule } from './main/content/myQuestions/myQuestions.module';
-import { UniKnowledgeInformationsModule } from './main/content/informations/informations.module';
 import { UniKnowledgeLoginModule } from './main/content/login/login.module';
 import { UniKnowledgeSearchBarModule } from './core/components/search-bar/search-bar.module';
+import { MatDialogModule } from '@angular/material';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -39,9 +39,9 @@ const appRoutes: Routes = [
         UniKnowledgeMainModule,
         UniKnowledgeAllQuestionsModule,
         UniKnowledgeMyQuestionsModule,
-        UniKnowledgeInformationsModule,
         UniKnowledgeLoginModule,
-        UniKnowledgeSearchBarModule
+        UniKnowledgeSearchBarModule,
+        MatDialogModule
 
     ],
     providers   : [
