@@ -8,7 +8,6 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-import { UniKnowledgeMatSidenavHelperService } from '../directives/uniKnowledge-mat-sidenav-helper/uniKnowledge-mat-sidenav-helper.service';
 import { UniKnowledgePipesModule } from '../pipes/pipes.module';
 import { UniKnowledgeMatchMedia } from '../services/match-media.service';
 import { UniKnowledgePerfectScrollbarDirective } from '../directives/uniKnowledge-perfect-scrollbar/uniKnowledge-perfect-scrollbar.directive';
@@ -49,7 +48,6 @@ import { TranslateModule } from '@ngx-translate/core';
     providers      : [
         CookieService,
         UniKnowledgeMatchMedia,
-        UniKnowledgeMatSidenavHelperService,
         UniKnowledgeTranslationLoaderService
     ]
 })

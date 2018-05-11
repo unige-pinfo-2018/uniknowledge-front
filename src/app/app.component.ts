@@ -3,7 +3,6 @@ import { UniKnowledgeSplashScreenService } from './core/services/splash-screen.s
 import { TranslateService } from '@ngx-translate/core';
 import { UniKnowledgeTranslationLoaderService } from './core/services/translation-loader.service';
 
-import { UniKnowledgeNavigationService } from './core/components/navigation/navigation.service';
 
 @Component({
     selector   : 'uniKnowledge-root',
@@ -13,7 +12,6 @@ import { UniKnowledgeNavigationService } from './core/components/navigation/navi
 export class AppComponent
 {
     constructor(
-        private uniKnowledgeNavigationService: UniKnowledgeNavigationService,
         private uniKnowledgeSplashScreen: UniKnowledgeSplashScreenService,
         private translate: TranslateService,
         private uniKnowledgeTranslationLoader: UniKnowledgeTranslationLoaderService

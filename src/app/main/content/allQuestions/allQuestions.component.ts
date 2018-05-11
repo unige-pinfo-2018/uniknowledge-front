@@ -21,7 +21,7 @@ export class UniKnowledgeAllQuestionsComponent
     askDialogRef: MatDialogRef<AskQuestionDialogComponent>;
   
     openAskQuestion() {
-      this.askDialogRef = this.dialog.open(AskQuestionDialogComponent {
+      this.askDialogRef = this.dialog.open(AskQuestionDialogComponent, {
         height: '400px',
         width: '600px',
       });

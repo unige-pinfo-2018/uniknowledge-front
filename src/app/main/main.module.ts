@@ -7,7 +7,6 @@ import { UniKnowledgeMainComponent } from './main.component';
 import { UniKnowledgeContentComponent } from './content/content.component';
 import { UniKnowledgeToolbarComponent } from './toolbar/toolbar.component';
 import { UniKnowledgeNavBarMenuComponent } from './navBarMenu/navBarMenu.component';
-import { UniKnowledgeNavigationModule } from '../core/components/navigation/navigation.module';
 
 import { UniKnowledgeSearchBarModule } from '../core/components/search-bar/search-bar.module';
 
@@ -21,7 +20,6 @@ import { UniKnowledgeSearchBarModule } from '../core/components/search-bar/searc
     imports     : [
         SharedModule,
         RouterModule,
-        UniKnowledgeNavigationModule,
         UniKnowledgeSearchBarModule
     ],
     exports     : [

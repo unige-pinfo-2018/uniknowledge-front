@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { UniKnowledgeMainModule } from './main/main.module';
 import { UniKnowledgeSplashScreenService } from './core/services/splash-screen.service';
 import { UniKnowledgeConfigService } from './core/services/config.service';
-import { UniKnowledgeNavigationService } from './core/components/navigation/navigation.service';
 import { UniKnowledgeAllQuestionsModule } from './main/content/allQuestions/allQuestions.module';
 import { UniKnowledgeMyQuestionsModule } from './main/content/myQuestions/myQuestions.module';
 import { UniKnowledgeLoginModule } from './main/content/login/login.module';
@@ -46,8 +45,7 @@ const appRoutes: Routes = [
     ],
     providers   : [
         UniKnowledgeSplashScreenService,
-        UniKnowledgeConfigService,
-        UniKnowledgeNavigationService
+        UniKnowledgeConfigService
     ],
     bootstrap   : [
         AppComponent
