@@ -1,7 +1,9 @@
-export interface User {
+export class User {
   email: string;
+  firstName: string;
+  lastName: string;
   token: string;
   username: string;
   bio: string;
-  image: string;
+  profilePictureURL: string;
 }

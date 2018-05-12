@@ -6,15 +6,17 @@ import { TranslateService } from '@ngx-translate/core';
 import { UniKnowledgeTranslationLoaderService } from '../../../core/services/translation-loader.service';
 import { locale as english } from './i18n/en';
 import { locale as french } from './i18n/fr';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../../core/services/user.service';
+
 
 @Component({
-    selector   : 'uniKnowledge-login',
+    selector: 'uniKnowledge-login',
     templateUrl: './login.component.html',
-    styleUrls  : ['./login.component.scss'],
-    animations : uniKnowledgeAnimations
+    styleUrls: ['./login.component.scss'],
+    animations: uniKnowledgeAnimations
 })
-export class UniKnowledgeLoginComponent implements OnInit
-{
+export class UniKnowledgeLoginComponent implements OnInit {
     loginForm: FormGroup;
     loginFormErrors: any;
     languages: any;
@@ -23,21 +25,22 @@ export class UniKnowledgeLoginComponent implements OnInit
     constructor(
         private uniKnowledgeConfig: UniKnowledgeConfigService,
         private formBuilder: FormBuilder,
+        private router: Router,
         private translationLoader: UniKnowledgeTranslationLoaderService,
-        private translate: TranslateService
-    )
-    {
+        private translate: TranslateService,
+        private userService: UserService,
+    ) {
 
         this.languages = [
             {
-                'id'   : 'en',
+                'id': 'en',
                 'title': 'English',
-                'flag' : 'us'
+                'flag': 'us'
             },
             {
-                'id'   : 'fr',
+                'id': 'fr',
                 'title': 'Français',
-                'flag' : 'fr'
+                'flag': 'fr'
             }
         ];
 
@@ -46,21 +49,20 @@ export class UniKnowledgeLoginComponent implements OnInit
         this.uniKnowledgeConfig.setSettings({
             layout: {
                 navigation: 'none',
-                toolbar   : 'none',
-                footer    : 'none'
+                toolbar: 'none',
+                footer: 'none'
             }
         });
 
         this.loginFormErrors = {
-            email   : {},
+            email: {},
             password: {}
         };
     }
 
-    ngOnInit()
-    {
+    ngOnInit() {
         this.loginForm = this.formBuilder.group({
-            email   : ['', [Validators.required, Validators.email]],
+            email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
 
@@ -69,8 +71,7 @@ export class UniKnowledgeLoginComponent implements OnInit
         });
     }
 
-    setLanguage(lang)
-    {
+    setLanguage(lang) {
         // Set the selected language for toolbar
         this.selectedLanguage = lang;
 
@@ -78,12 +79,9 @@ export class UniKnowledgeLoginComponent implements OnInit
         this.translate.use(lang.id);
     }
 
-    onLoginFormValuesChanged()
-    {
-        for ( const field in this.loginFormErrors )
-        {
-            if ( !this.loginFormErrors.hasOwnProperty(field) )
-            {
+    onLoginFormValuesChanged() {
+        for (const field in this.loginFormErrors) {
+            if (!this.loginFormErrors.hasOwnProperty(field)) {
                 continue;
             }
 
@@ -93,10 +91,26 @@ export class UniKnowledgeLoginComponent implements OnInit
             // Get the control
             const control = this.loginForm.get(field);
 
-            if ( control && control.dirty && !control.valid )
-            {
+            if (control && control.dirty && !control.valid) {
                 this.loginFormErrors[field] = control.errors;
             }
         }
+    }
+
+    submitForm() {
+
+        const credentials = this.loginForm.value;
+        this.userService
+            .attemptAuth('login', credentials)
+            .subscribe(
+                data => {
+                    console.log(data);
+                    this.router.navigateByUrl('/');
+                },
+                err => {
+                    this.loginFormErrors = err;
+                    this.router.navigateByUrl('/login');
+                }
+            );
     }
 }

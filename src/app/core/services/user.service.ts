@@ -16,6 +16,16 @@ export class UserService {
   private currentUserSubject = new BehaviorSubject<User>({} as User);
   public currentUser = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
 
+  public user: User = {
+    email: 'exem',
+    token: '',
+    username: 'jodoe',
+    firstName: 'John',
+    lastName: 'Doe',
+    bio: '',
+    profilePictureURL: 'assets/images/avatars/profile.jpg'
+  };
+
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
@@ -30,9 +40,9 @@ export class UserService {
   populate() {
     // If JWT detected, attempt to get & store user's info
     if (this.jwtService.getToken()) {
-      this.apiService.get('/user')
+      this.apiService.get('/users-service/users/me')
       .subscribe(
-        data => this.setAuth(data.user),
+        data => this.setAuth(data),
         err => this.purgeAuth()
       );
     } else {
@@ -44,6 +54,7 @@ export class UserService {
   setAuth(user: User) {
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
+
     // Set current user data into observable
     this.currentUserSubject.next(user);
     // Set isAuthenticated to true
@@ -59,12 +70,40 @@ export class UserService {
     this.isAuthenticatedSubject.next(false);
   }
 
+  getUserInfos() {
+    const route = '/users/me';
+    return this.apiService.get('/users-service' + route)
+    .pipe(map(
+    data => {
+      console.log(data);
+      this.user.email = data.email;
+      this.user.username = data.firstName + ' ' + data.lastName;
+      this.user.profilePictureURL = data.profilePictureURL;
+
+      console.log(this.user);
+      return data;
+    }, 
+    err => console.log(err)
+  ));
+  }
+
+  attemptLogout() {
+    const route = '/logout';
+    return this.apiService.post('/users-service' + route)
+    .pipe(map(
+    data => {
+      this.purgeAuth();
+      return data;
+    }
+  ));
+  }
+
   attemptAuth(type, credentials): Observable<User> {
     const route = (type === 'login') ? '/login' : '';
-    return this.apiService.post('/users' + route, {user: credentials})
+    return this.apiService.post('/users-service' + route, credentials)
       .pipe(map(
       data => {
-        this.setAuth(data.user);
+        this.setAuth(data);
         return data;
       }
     ));

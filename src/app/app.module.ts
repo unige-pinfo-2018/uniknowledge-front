@@ -16,6 +16,11 @@ import { UniKnowledgeSearchBarModule } from './core/components/search-bar/search
 import { MatDialogModule } from '@angular/material';
 
 import { TranslateModule } from '@ngx-translate/core';
+import { UserService } from './core/services/user.service';
+import { ApiService } from './core/services/api.service';
+import { JwtService } from './core/services/jwt.service';
+import { HttpTokenInterceptor } from './core/interceptors';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 const appRoutes: Routes = [
     {
@@ -44,8 +49,12 @@ const appRoutes: Routes = [
 
     ],
     providers   : [
+        { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
         UniKnowledgeSplashScreenService,
-        UniKnowledgeConfigService
+        UniKnowledgeConfigService,
+        UserService,
+        ApiService,
+        JwtService
     ],
     bootstrap   : [
         AppComponent

@@ -14,19 +14,10 @@
                 
                 <mat-form-field id="email">
                     <input matInput placeholder="{{'LOGIN.EMAIL' | translate}}" formControlName="email">
-                    <mat-error *ngIf="loginFormErrors.email.required">
-                        Email is required
-                    </mat-error>
-                    <mat-error *ngIf="!loginFormErrors.email.required && loginFormErrors.email.email">
-                        Please enter a valid email address
-                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field id="password">
                     <input matInput type="password" placeholder="{{'LOGIN.PASSWORD' | translate}}" formControlName="password">
-                    <mat-error *ngIf="loginFormErrors.password.required">
-                        Password is required
-                    </mat-error>
                 </mat-form-field>
 
                 <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
@@ -38,7 +29,7 @@
                 </div>
 
                 <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
-                        [disabled]="loginForm.invalid">
+                        [disabled]="loginForm.invalid" (click)="submitForm()">
                         {{'LOGIN.LOGIN' | translate}}
                 </button>
 

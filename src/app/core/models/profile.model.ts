@@ -1,7 +1,10 @@
 export interface Profile {
+  email: string;
+  firstName: string;
+  lastName: string;
+  token: string;
   username: string;
-  university:string;
   bio: string;
-  image: string;
+  profilePictureURL: string;
   following: boolean;
 }

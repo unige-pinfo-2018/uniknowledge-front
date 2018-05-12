@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { UniKnowledgeConfigService } from '../../core/services/config.service';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
     selector   : 'uniKnowledge-toolbar',
@@ -16,11 +17,13 @@ export class UniKnowledgeToolbarComponent
     selectedLanguage: any;
     showLoadingBar: boolean;
     horizontalNav: boolean;
+    loginFormErrors: any;
 
     constructor(
         private router: Router,
         private uniKnowledgeConfig: UniKnowledgeConfigService,
-        private translate: TranslateService
+        private translate: TranslateService,
+        private userService: UserService
     )
     {
         this.languages = [
@@ -63,5 +66,20 @@ export class UniKnowledgeToolbarComponent
 
         // Use the selected language for translations
         this.translate.use(lang.id);
+    }
+
+    logout() {
+
+        this.userService
+            .attemptLogout()
+            .subscribe(
+                data => {
+                    console.log(data);
+                    this.router.navigateByUrl('/login');
+                },
+                err => {
+                    this.loginFormErrors = err;
+                }
+            );
     }
 }

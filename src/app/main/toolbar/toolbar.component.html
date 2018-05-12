@@ -14,15 +14,15 @@
               <div>
                  <button mat-button [matMenuTriggerFor]="userMenu"
                     class="user-button">
-                    <img class="avatar" src="assets/images/avatars/profile.jpg">
-                    <span class="username mr-12" fxHide fxShow.gt-sm>John Doe</span>
+                    <img class="avatar" src="{{userService.user.profilePictureURL}}">
+                    <span class="username mr-12" fxHide fxShow.gt-sm>{{userService.user.username}}</span>
                  </button>
-                 <mat-menu  #userMenu="matMenu" [overlapTrigger]="false">
+                 <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
                  <button mat-menu-item>
                     <mat-icon>account_circle</mat-icon>
                     <span>My Profile</span>
                  </button>
-                 <button mat-menu-item>
+                 <button (click)="logout()" mat-menu-item>
                     <mat-icon>exit_to_app</mat-icon>
                     <span>Logout</span>
                  </button>
