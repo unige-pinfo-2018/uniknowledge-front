@@ -1,6 +1,6 @@
 import {Profile } from './profile.model';
 
-export class question{
+export class questions{
     slug: string;
     title: string = '';
     body: string = '';

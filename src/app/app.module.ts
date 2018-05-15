@@ -21,6 +21,7 @@ import { ApiService } from './core/services/api.service';
 import { JwtService } from './core/services/jwt.service';
 import { HttpTokenInterceptor } from './core/interceptors';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { QuestionsService} from './core/services/questions.service'
 
 
 const appRoutes: Routes = [
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
         UniKnowledgeMyQuestionsModule,
         UniKnowledgeLoginModule,
         UniKnowledgeSearchBarModule,
-        MatDialogModule
+        MatDialogModule,
+      //  QuestionsService
 
     ],
     providers   : [
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
         UniKnowledgeConfigService,
         UserService,
         ApiService,
-        JwtService
+        JwtService,
+        QuestionsService
     ],
     bootstrap   : [
         AppComponent
