@@ -22,6 +22,7 @@ import { JwtService } from './core/services/jwt.service';
 import { HttpTokenInterceptor } from './core/interceptors';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
 const appRoutes: Routes = [
     {
         path      : '**',
