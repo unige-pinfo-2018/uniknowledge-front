@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { ApiService } from './api.service';
-import { question, question } from '../models';
+import { question } from '../models';
 
 @Injectable()
 export class QuestionsService {
