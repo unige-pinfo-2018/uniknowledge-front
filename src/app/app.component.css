@@ -1,0 +1,9 @@
+.mesquestions{border-left: solid 1px;padding: 5px;
+text-decoration-color: black;position:absolute;left:150px;background-color: inherit;}
+.question{border-left: solid 1px;border-bottom: solid 1px;padding: 5px;border-right: solid 1px;}
+.reponse{padding: 5px;border-left: solid 1px;position:absolute;left:300px;top:90px}
+.profile{padding: 5px;border-left: solid 1px;position:absolute;left:450px;top:90px}
+.login{padding: 5px;border-left: solid 1px;position:absolute;left:600px;top:90px}
+.signin{padding: 5px;border-left: solid 1px;position:absolute;left:750px;top:90px}
+.answer-question{padding: 5px;border-left: solid 1px;position:absolute;left:900px;top:90px}
+.ask-question{padding: 5px;border-left: solid 1px;position:absolute;left:1050px;top:90px}

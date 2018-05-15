@@ -1,0 +1,37 @@
+.filtre{border:  2px solid lightgray;padding: 10%;position:absolute;left:80px;top:150px;width: 3%}
+.titre{position:absolute;left:20px;top:20px;font-size: 20px;font-weight: normal;}
+#filter-btn1{font-weight:bold;position: absolute;top: 50px; left: 20px;}
+#filter-btn2{font-weight:bold; position: absolute;top: 100px; left: 20px;}
+#filter-btn3{font-weight:bold; position: absolute;top: 150px; left: 20px;}
+.search{border: 2px solid lightgray;padding: 3%;position:absolute;left:430px;top:150px;width:55%}
+
+.vue{border: 2px solid lightgray;padding: 10%;position:absolute;left:80px;top:420px;width: 3%;padding-bottom: 20px;}
+.titre2{position:absolute;left:20px;top:20px;font-size: 20px;font-weight: normal;}
+#btn1{font-weight:bold;position: absolute;top: 50px; left: 20px;}
+#btn2{font-weight:bold; position: absolute;top: 100px; left: 20px;}
+
+#ask-btn{position: absolute;top: 300px; left: 660px;font-weight:normal;font-size:15px;
+color:black;background-color:blue;color: white;}
+.questiontitle{position: absolute;top: 300px; left: 425px;font-weight:normal;font-size:20px;
+color:black;}
+.question1{position: absolute;top: 330px; left: 425px;border: 2px solid lightgray ;
+  padding: 3%;width: 55%}
+.who{position: absolute;top:320px; left:960px;font-size:10px;font-weight:bold;
+color:black;border-left: 2px solid lightgray; border-right: 2px solid lightgray ;padding: 25px;margin: 50px;}
+.type{position: absolute;top: 40px; left:30px;font-weight:normal;font-size:10px;
+color:black;box-shadow: -4px gray;background-color: white;}
+.nb-answer{position: absolute;top: 390px; left:1150px;font-weight:bold;font-size:15px;
+color:black;}
+.demande{position: absolute;top: 20px; left:-20px;font-weight:normal;font-size:10px;
+color:black;}
+
+.question2{position: absolute;top: 455px; left: 425px;border: 2px solid lightgray;
+  padding: 3%;width: 55%}
+.who2{position: absolute;top:435px; left:960px;font-size:10px;font-weight:bold;
+color:black;border-left: 2px solid lightgray ; border-right: 2px solid lightgray;padding: 25px;margin: 50px;}
+.type2{position: absolute;top: 40px; left:30px;font-weight:normal;font-size:10px;
+color:black;box-shadow: -4px gray;background-color: white;}
+.nb-answer2{position: absolute;top:505px; left:1150px;font-weight:bold;font-size:15px;
+color:black;}
+.demande2{position: absolute;top: 20px; left:-20px;font-weight:normal;font-size:10px;
+color:black;}

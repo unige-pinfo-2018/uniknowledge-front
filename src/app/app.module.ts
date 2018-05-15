@@ -1,65 +1,36 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
-import 'hammerjs';
-import { SharedModule } from './core/modules/shared.module';
+import { NgModule } from '@angular/core';
+
+
 import { AppComponent } from './app.component';
-import { UniKnowledgeMainModule } from './main/main.module';
-import { UniKnowledgeSplashScreenService } from './core/services/splash-screen.service';
-import { UniKnowledgeConfigService } from './core/services/config.service';
-import { UniKnowledgeAllQuestionsModule } from './main/content/allQuestions/allQuestions.module';
-import { UniKnowledgeMyQuestionsModule } from './main/content/myQuestions/myQuestions.module';
-import { UniKnowledgeLoginModule } from './main/content/login/login.module';
-import { UniKnowledgeSearchBarModule } from './core/components/search-bar/search-bar.module';
-import { MatDialogModule } from '@angular/material';
-
-import { TranslateModule } from '@ngx-translate/core';
-import { UserService } from './core/services/user.service';
-import { ApiService } from './core/services/api.service';
-import { JwtService } from './core/services/jwt.service';
-import { HttpTokenInterceptor } from './core/interceptors';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
-const appRoutes: Routes = [
-    {
-        path      : '**',
-        redirectTo: 'questions'
-    }
-];
-
+import { HeaderComponent } from './header/header.component';
+import { MyQuestionComponent } from './my-question/my-question.component';
+import { AllQuestionComponent } from './all-question/all-question.component';
+import { LoginComponent } from './login/login.component';
+import { MyAnswerComponent } from './my-answer/my-answer.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { RegisterComponent } from './register/register.component';
+import { AskQuestionComponent } from './ask-question/ask-question.component';
+import { AnswerQuestionComponent } from './answer-question/answer-question.component';
 @NgModule({
-    declarations: [
-        AppComponent
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MyQuestionComponent,
+    AllQuestionComponent,
+    LoginComponent,
+    MyAnswerComponent,
+    MyProfileComponent,
+    RegisterComponent,
+    AskQuestionComponent,
+    AnswerQuestionComponent,
     ],
-    imports     : [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes),
-        SharedModule,
-        TranslateModule.forRoot(),
-        UniKnowledgeMainModule,
-        UniKnowledgeAllQuestionsModule,
-        UniKnowledgeMyQuestionsModule,
-        UniKnowledgeLoginModule,
-        UniKnowledgeSearchBarModule,
-        MatDialogModule
-
-    ],
-    providers   : [
-        { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
-        UniKnowledgeSplashScreenService,
-        UniKnowledgeConfigService,
-        UserService,
-        ApiService,
-        JwtService
-    ],
-    bootstrap   : [
-        AppComponent
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule
-{
-}
+export class AppModule { }

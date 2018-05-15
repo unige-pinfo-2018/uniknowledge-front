@@ -1,1 +1,27 @@
-<uniKnowledge-main></uniKnowledge-main>
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+<nav class="mesquestions">
+  <a routerLink="/my-question">My Questions</a>
+</nav>
+<nav class="question">
+  <a routerLink="/all-question">All Questions</a>
+</nav>
+<nav class="reponse">
+  <a routerLink="/my-answer">My Answers</a>
+</nav>
+<nav class="profile">
+  <a routerLink="/my-profile">My Profile</a>
+</nav>
+<nav class="login">
+<a [routerLink]="['/login']">Login</a>
+</nav>
+<nav class="signin">
+<a [routerLink]="['/register']">Sign In</a>
+</nav>
+<nav class="answer-question">
+<a [routerLink]="['/answer-question']">Answer</a>
+</nav>
+<nav class="ask-question">
+<a [routerLink]="['/ask-question']">ask question</a>
+</nav>
+<router-outlet></router-outlet>

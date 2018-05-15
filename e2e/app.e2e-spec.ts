@@ -1,14 +1,14 @@
-import { UniKnowledge2Page } from './app.po';
+import { AppPage } from './app.po';
 
-describe('UniKnowledge App', () => {
-    let page: UniKnowledge2Page;
+describe('uniknowledge App', () => {
+  let page: AppPage;
 
-    beforeEach(() => {
-        page = new UniKnowledge2Page();
-    });
+  beforeEach(() => {
+    page = new AppPage();
+  });
 
-    it('should display welcome message', () => {
-        page.navigateTo();
-        expect(page.getParagraphText()).toEqual('Welcome to app!');
-    });
+  it('should display welcome message', () => {
+    page.navigateTo();
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
+  });
 });

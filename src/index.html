@@ -1,73 +1,14 @@
 <!doctype html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Uniknowledge</title>
+  <base href="/">
 
-    <head>
-
-        <title>UniKnowledge Manager</title>
-        <base href="/">
-
-        <meta charset="utf-8">
-        <meta name="description" content="UniKnowledge Manager is a web manager tailored to manage your events to disply in the UniKnowledge mobile app.">
-        <meta name="keywords" content="UniKnowledge,Manager,Administration,Panel,Events">
-        <meta name="author" content="UniKnowledge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-        <link rel="icon" type="image/x-icon" href="/src/favicon.ico">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-        <!-- UniKnowledge Splash Screen CSS -->
-        <style type="text/css">
-            #uniKnowledge-splash-screen {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: white;
-                z-index: 99999;
-                pointer-events: none;
-            }
-
-            #uniKnowledge-splash-screen .center {
-                display: block;
-                width: 100%;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            #uniKnowledge-splash-screen .logo {
-                width: 300px;
-                margin: 0 auto;
-                animation: bounce 0.35s ease infinite alternate;
-            }
-
-            @keyframes bounce {
-                from {transform: translateY(0);}
-                to   {transform: translateY(-20px);}
-            }
-        </style>
-        <!-- / UniKnowledge Splash Screen CSS -->
-    </head>
-
-    <body class="primary-800-bg">
-
-        <!-- UniKnowledge Splash Screen -->
-        <uniKnowledge-splash-screen id="uniKnowledge-splash-screen">
-
-            <div class="center">
-                <div class="logo">
-                    <img width="300px" src="assets/images/logos/uniknowledge-logo.svg">
-                </div>
-            </div>
-  
-        </uniKnowledge-splash-screen>
-        <!-- / UniKnowledge Splash Screen -->
-
-        <uniKnowledge-root></uniKnowledge-root>
-
-    </body>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
 </html>

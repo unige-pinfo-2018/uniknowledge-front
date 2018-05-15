@@ -1,0 +1,13 @@
+h1{color:blue;
+  text-align:center;
+}
+.un{
+  position: absolute; top: 25px; left: 100px;font-weight:normal;font-size:15px;
+  color:black;}
+.deux{font-weight:normal;}
+.trois{position: absolute; top: 30px; left: 495px;}
+.quatre{position: absolute; top: 30px; left: 1080px;}
+.cinq{position: absolute; top: 50px; left: 180px;}
+.six{position: absolute; top: 50px; left: 100px;}
+
+div{border: 1px solid;}

@@ -1,0 +1,9 @@
+.profil{border: 2px solid lightgray;width: 50%;padding-left: 2%;padding-right:20%;padding-top: 2%;padding-bottom: 30%;margin-top: 20px}
+.titre{position: absolute;top:150px;}
+.nom{position: absolute;top:200px;}
+.prenom{position: absolute;top:250px;}
+.mail{position: absolute;top:300px;}
+.motpass{position: absolute;top:350px;}
+.valide{position: absolute;top:400px;}
+.picture{position: absolute;top:250px;left:610px}
+.photo{position: absolute;top:400px;left:600px}

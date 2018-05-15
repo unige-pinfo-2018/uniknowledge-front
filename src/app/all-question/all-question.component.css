@@ -1,0 +1,64 @@
+.lapage{border: 2px solid lightgray;width: 75%;padding: 7%;margin: 50px;
+  position: absolute;top: 100px; left: 15px;font-weight:normal;}
+  .searchtitle{position: absolute;top: 40px; left: 20px;font-weight:normal;font-size:15px;
+    color:black;margin-bottom: 20px}
+  .champ{position: absolute;top: 115px; left: 20px;font-weight:normal;font-size:20px;}
+  .bouton{background-color:DeepSkyBLue;font-size:25px;color: white;position: absolute;top: 115px; left:360px;}
+
+  .filtre{position: absolute;top: 50px; left: 660px;font-weight:normal;font-size:15px;
+    color:black;}
+#filter-btn1{ background-color:DeepSkyBLue;border-radius: 5px;color: white;font-size:20px;
+    font-weight:bold;margin-left: 10px; position: absolute;top: 120px; left: 650px;}
+#filter-btn2{background-color: Orange;font-size:20px; font-weight:bold; border-radius: 5px;
+        color: white;margin-left: 10px;position: absolute;top: 120px; left: 800px;}
+#filter-btn3{background-color: DeepPink;font-size:20px; font-weight:bold;border-radius: 5px;
+        color: white;margin-left: 10px;position: absolute;top: 120px; left: 880px;}
+#filter-btn4{background-color: MediumOrchid;font-size:20px; font-weight:bold;border-radius: 5px;
+        color: white;margin-left: 10px;position: absolute;top: 120px; left:1030px;}
+
+#ask-btn{position: absolute;top: 220px; left: 200px;font-weight:normal;font-size:15px;
+color:black;background-color:blue;color: white;}
+.questiontitle{position: absolute;top: 220px; left: 4px;font-weight:normal;font-size:20px;
+color:black;}
+.question1{position: absolute;top: 280px; left: 0px;border: 2px solid lightgray;
+  padding: 3%;width: 65%}
+.who{position: absolute;top:260px; left:570px;font-size:10px;font-weight:bold;
+color:black;border-left: 2px solid lightgray; border-right: 2px solid lightgray;padding: 25px;margin: 50px;}
+.type{position: absolute;top: 40px; left:30px;font-weight:normal;font-size:10px;
+color:black;box-shadow: -4px gray;background-color: white;}
+.nb-answer{position: absolute;top: 330px; left:770px;font-weight:bold;font-size:15px;
+color:black;}
+.demande{position: absolute;top: 20px; left:-20px;font-weight:normal;font-size:10px;
+color:black;}
+
+.question2{position: absolute;top: 410px; left: 0px;border: 2px solid lightgray;
+  padding: 3%;width: 65%}
+.who2{position: absolute;top:390px; left:570px;font-size:10px;font-weight:bold;
+color:black;border-left: 2px solid lightgray; border-right: 2px solid lightgray;padding: 25px;margin: 50px;}
+.type2{position: absolute;top: 40px; left:30px;font-weight:normal;font-size:10px;
+color:black;box-shadow: -4px gray;background-color: white;}
+.nb-answer2{position: absolute;top: 460px; left:770px;font-weight:bold;font-size:15px;
+color:black;}
+.demande2{position: absolute;top: 20px; left:-20px;font-weight:normal;font-size:10px;
+color:black;}
+
+.question3{position: absolute;top: 560px; left: 0px;border: 2px solid lightgray;
+  padding: 3%;width: 65%}
+.who3{position: absolute;top:550px; left:570px;font-size:10px;font-weight:bold;
+color:black;border-left: 2px solid lightgray; border-right: 2px solid lightgray;padding: 25px;margin: 50px;}
+.type3{position: absolute;top: 40px; left:30px;font-weight:normal;font-size:10px;
+color:black;box-shadow: -4px gray;background-color: white;}
+.nb-answer3{position: absolute;top: 620px; left:770px;font-weight:bold;font-size:15px;
+color:black;}
+.demande3{position: absolute;top: 20px; left:-20px;font-weight:normal;font-size:10px;
+color:black;}
+
+
+
+.answertitle2{position: absolute;top: 230px; left: 900px;font-weight:normal;font-size:20px;
+color:black;}
+.question4{position: absolute;top: 295px; left: 840px;border: 2px solid lightgray;
+width: 10%;padding-top: 50px;padding-left: 20px;padding-right:170px;padding-bottom: 320px; }
+.example1{position: absolute;top: 40px;left: 20px; border-bottom: 2px solid lightgray;}
+.example2{position: absolute;top: 160px;left: 20px; border-bottom: 2px solid lightgray;}
+.example3{position: absolute;top: 320px; left: 20px;border-bottom: 2px solid lightgray;}
