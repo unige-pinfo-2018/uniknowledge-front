@@ -15,10 +15,35 @@ export class AskQuestionDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<AskQuestionDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) 
+    public data: any,
+    private questionsService: QuestionsService,
+    private fb: FormBuilder
+   ) 
+    {
+      //use the fb formbuilder to create a group
+      this.quesion1From = this.fb.group({
+        title: '',
+        body: '',
+      });
+      //
+     }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  ngOnInit() {
+  //nothing for now
+  }
+
+  submitForm() {
+    //post the question
+    this.questionsService.save(this.question1)
+    err => {
+      this.errors = err;
+    }
+  }
+
 
 }
