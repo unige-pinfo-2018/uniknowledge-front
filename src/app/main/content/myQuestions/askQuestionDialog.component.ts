@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material';
 import { QuestionsService } from '../../../core/services/questions.service'
-import { questions } from '../../../core/models/questions.model'
+import { questions } from '../../../core/models/index'
 
 @Component({
   selector: 'uniKnowledge-askQuestion-dialog-my',
@@ -15,7 +15,8 @@ export class AskQuestionDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<AskQuestionDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) 
+    @Inject(MAT_DIALOG_DATA)
+    @Inject(questions)
     public data: any,
     private questionsService: QuestionsService,
     private fb: FormBuilder
@@ -40,6 +41,7 @@ export class AskQuestionDialogComponent {
   submitForm() {
     //post the question
     this.questionsService.save(this.question1)
+    console.log(this.question1)
     err => {
       this.errors = err;
     }

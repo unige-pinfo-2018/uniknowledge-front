@@ -48,7 +48,6 @@ const appRoutes: Routes = [
         UniKnowledgeLoginModule,
         UniKnowledgeSearchBarModule,
         MatDialogModule,
-      //  QuestionsService
 
     ],
     providers   : [

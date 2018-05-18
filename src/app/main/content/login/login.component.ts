@@ -8,6 +8,7 @@ import { locale as english } from './i18n/en';
 import { locale as french } from './i18n/fr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../../core/services/user.service';
+import {JwtService} from '../../../core/services/jwt.service'
 
 
 @Component({

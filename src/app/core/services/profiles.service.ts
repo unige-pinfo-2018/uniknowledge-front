@@ -16,6 +16,7 @@ export class ProfilesService {
       .pipe(map((data: {profile: Profile}) => data.profile));
   }
 
+  /*
   follow(username: string): Observable<Profile> {
     return this.apiService.post('/profiles/' + username + '/follow');
   }
@@ -23,5 +24,5 @@ export class ProfilesService {
   unfollow(username: string): Observable<Profile> {
     return this.apiService.delete('/profiles/' + username + '/follow');
   }
-
+  */
 }

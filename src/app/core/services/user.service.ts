@@ -89,7 +89,7 @@ export class UserService {
 
   attemptLogout() {
     const route = '/logout';
-    return this.apiService.post('/users-service' + route)
+    return this.apiService.get('/users-service' + route)
     .pipe(map(
     data => {
       this.purgeAuth();

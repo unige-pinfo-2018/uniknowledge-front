@@ -14,7 +14,7 @@ export class QuestionsService {
   ) { }
 
   get(slug): Observable<questions>{
-    return this.apiService.get('/posts-service/questions/' + slug) //requires testing
+    return this.apiService.get('/posts-service/questions/' + slug) //hm
            .map(data => data.question);
   }
 
