@@ -17,17 +17,17 @@ export class UserService {
   public currentUser = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
 
   public user: User = {
-    email: 'exem',
+    email:  '',
     token: '',
-    username: 'jodoe',
+    username: 'Coucou',
     firstName: 'John',
     lastName: 'Doe',
     bio: '',
-    profilePictureURL: 'assets/images/avatars/profile.jpg'
+    profilePictureURL: 'assets/images/avatars/profile.jpg',
+    points: 0
   };
 
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
-  public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
   constructor (
     private apiService: ApiService,
@@ -42,7 +42,9 @@ export class UserService {
     if (this.jwtService.getToken()) {
       this.apiService.get('/users-service/users/me')
       .subscribe(
-        data => this.setAuth(data),
+        data => {
+          this.setAuth(data);
+        },
         err => this.purgeAuth()
       );
     } else {
@@ -52,13 +54,14 @@ export class UserService {
   }
 
   setAuth(user: User) {
+
+    
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
 
     // Set current user data into observable
     this.currentUserSubject.next(user);
-    // Set isAuthenticated to true
-    this.isAuthenticatedSubject.next(true);
+
   }
 
   purgeAuth() {
@@ -70,26 +73,36 @@ export class UserService {
     this.isAuthenticatedSubject.next(false);
   }
 
-  getUserInfos() {
+  getUserInfos(): Observable<User> {
     const route = '/users/me';
     return this.apiService.get('/users-service' + route)
     .pipe(map(
     data => {
       console.log(data);
-      this.user.email = data.email;
-      this.user.username = data.firstName + ' ' + data.lastName;
-      this.user.profilePictureURL = data.profilePictureURL;
-
-      console.log(this.user);
       return data;
-    }, 
-    err => console.log(err)
+    }
+  ));
+  }
+
+
+  isAuthenticated(): Observable<boolean> {
+    const route = '/users/me';
+    return this.apiService.get('/users-service' + route)
+    .pipe(map(
+    data => {
+      console.log('success');
+      return true;
+    },
+    error => {
+      console.log('error');
+      return false;
+    }
   ));
   }
 
   attemptLogout() {
     const route = '/logout';
-    return this.apiService.get('/users-service' + route)
+    return this.apiService.post('/users-service' + route)
     .pipe(map(
     data => {
       this.purgeAuth();
@@ -123,5 +136,4 @@ export class UserService {
       return data.user;
     }));
   }
-
 }

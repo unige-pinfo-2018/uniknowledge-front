@@ -1,20 +1,29 @@
 <div class="page-layout blank p-24" fxLayout="row" fxLayoutAlign="center start" uniKnowledgePerfectScrollbar>
     <div fxLayout="column" fxLayoutAlign="start center">
-        <h1>{{'MY_QUESTIONS.ASK_BUTTON' | translate}}</h1>
+        <h1>{{'ASK_QUESTION.ASK_BUTTON' | translate}}</h1>
         <div fxLayout="row">
             <mat-form-field fxFlex="350px">
-                <input matInput placeholder="{{'MY_QUESTIONS.TITLE_PLACEHOLDER' | translate}}">
+                <input [(ngModel)]="title" matInput placeholder="{{'ASK_QUESTION.TITLE_PLACEHOLDER' | translate}}">
             </mat-form-field>
         </div>
         <div fxLayout="row">
             <mat-form-field fxFlex="350px">
-                <textarea rows=5 matInput placeholder="{{'MY_QUESTIONS.DESCRIPTION_PLACEHOLDER' | translate}}"></textarea>
+                <textarea [(ngModel)]="description" rows=5 matInput placeholder="{{'ASK_QUESTION.DESCRIPTION_PLACEHOLDER' | translate}}"></textarea>
             </mat-form-field>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field fxFlex="350px">
+                <mat-select placeholder="{{'ASK_QUESTION.DOMAIN' | translate}}" [(value)]="selectedDomain">
+                  <mat-option *ngFor="let domain of domains" [value]="domain">
+                    {{ domain }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
         </div>
         <div fxLayout="row">
             <mat-dialog-actions fxFlex>
-                <button mat-button (click)="onNoClick()">{{'MY_QUESTIONS.CANCEL' | translate}}</button>
-                <button mat-button>{{'MY_QUESTIONS.ASK' | translate}}</button>
+                <button mat-button (click)="onNoClick()">{{'ASK_QUESTION.CANCEL' | translate}}</button>
+                <button mat-button (click)="submitForm()">{{'ASK_QUESTION.ASK' | translate}}</button>
             </mat-dialog-actions>
         </div>
     </div>

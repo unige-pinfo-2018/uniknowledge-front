@@ -58,18 +58,19 @@
             </div>
 
             <!-- Questions List Section-->
-            <div>
+            <div fxLayout="column">
+
+                <h3 *ngIf="questions.length == 0">No Question found !</h3>
 
                 <!-- Question Item-->
-                <mat-card class="no-padding" fxFlex="97%" fxLayoutAlign="space-between center">
-
+                <mat-card *ngFor="let question of questions" style="margin-bottom:20px;margin-right:25px;" class="no-padding" fxFlex="97%" fxLayoutAlign="space-between center">
                     <!-- Question Sub-Section-->
                     <div fxFlex="80%">
                         <mat-card-title>
-                            <h2>How would you implement a Tower Of Hanoi Problem in Python ?</h2>
+                            <h2>{{question.title}}</h2>
                         </mat-card-title>
                         <mat-card-subtitle>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...
+                            {{question.text}}
                         </mat-card-subtitle>
                     </div>
 
@@ -80,7 +81,7 @@
                         <mat-card-title>
                             <h2>Asked By</h2>
                         </mat-card-title>
-                        <mat-card-subtitle>Domain</mat-card-subtitle>
+                        <mat-card-subtitle>{{question.author.firstName}} {{question.author.lastName}}</mat-card-subtitle>
                     </div>
 
                     <div class="vl"></div>
@@ -88,9 +89,16 @@
                     <!-- Answers Infos Sub-Section-->
                     <div fxFlex class="question-infos">
                         <mat-card-title>
-                            <h2>2</h2>
+                            <h2>{{question.nbAnswers}}</h2>
                         </mat-card-title>
-                        <mat-card-subtitle>Answers</mat-card-subtitle>
+                        <mat-card-subtitle>Answer(s)</mat-card-subtitle>
+                    </div>
+                    <div class="vl"></div>
+                    <div fxFlex class="question-infos">
+                        <mat-card-title>
+                            <h2>{{question.popularity}}</h2>
+                        </mat-card-title>
+                        <mat-card-subtitle>Upvote(s)</mat-card-subtitle>
                     </div>
                 </mat-card>
             </div>

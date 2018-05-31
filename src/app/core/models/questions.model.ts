@@ -1,10 +1,10 @@
 import {Profile } from './profile.model';
 
-export class questions{
+export class Question{
     slug: string;
-    title: string = '';
-    body: string = '';
-    domainList: Array<string> = [];
+    title: string;
+    text: string;
+    domains: Array<string>;
     followed: boolean;
     upvoteCount: number;
     author: Profile;

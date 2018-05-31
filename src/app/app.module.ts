@@ -22,6 +22,9 @@ import { JwtService } from './core/services/jwt.service';
 import { HttpTokenInterceptor } from './core/interceptors';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuestionsService} from './core/services/questions.service'
+import { User } from './core/models';
+import { UniKnowledgeAskQuestionDialogModule } from './main/content/myQuestions/askQuestionDialog.module';
+import { AuthGuard } from './core/services/auth-guard.service';
 
 
 const appRoutes: Routes = [
@@ -48,6 +51,7 @@ const appRoutes: Routes = [
         UniKnowledgeLoginModule,
         UniKnowledgeSearchBarModule,
         MatDialogModule,
+        UniKnowledgeAskQuestionDialogModule
 
     ],
     providers   : [
@@ -57,7 +61,9 @@ const appRoutes: Routes = [
         UserService,
         ApiService,
         JwtService,
-        QuestionsService
+        QuestionsService,
+        User,
+        AuthGuard
     ],
     bootstrap   : [
         AppComponent

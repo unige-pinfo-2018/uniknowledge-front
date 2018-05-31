@@ -1,21 +1,21 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../core/modules/shared.module';
+import { AuthGuard } from '../../../core/services/auth-guard.service';
 
 import { UniKnowledgeAllQuestionsComponent } from './allQuestions.component';
-import { AskQuestionDialogComponent } from './askQuestionDialog.component';
 
 const routes = [
     {
         path: 'questions',
-        component: UniKnowledgeAllQuestionsComponent
+        component: UniKnowledgeAllQuestionsComponent,
+        canActivate: [AuthGuard],
     }
 ];
 
 @NgModule({
     declarations: [
         UniKnowledgeAllQuestionsComponent,
-        AskQuestionDialogComponent
     ],
     imports: [
         SharedModule,
@@ -25,7 +25,6 @@ const routes = [
         UniKnowledgeAllQuestionsComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents:    [AskQuestionDialogComponent]
 })
 
 export class UniKnowledgeAllQuestionsModule {

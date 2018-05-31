@@ -20,6 +20,15 @@ export const locale = {
             'CANCEL': 'Annuler',
             'TITLE_PLACEHOLDER': 'Titre de la Question',
             'DESCRIPTION_PLACEHOLDER': 'Description de la Question'
+        },
+
+        'ASK_QUESTION': {
+            'ASK_BUTTON': 'Poser une Question',
+            'ASK': 'Poser',
+            'CANCEL': 'Annuler',
+            'TITLE_PLACEHOLDER': 'Titre de la Question',
+            'DESCRIPTION_PLACEHOLDER': 'Description de la Question',
+            'DOMAIN': 'Domaine',
         }
     }
 };

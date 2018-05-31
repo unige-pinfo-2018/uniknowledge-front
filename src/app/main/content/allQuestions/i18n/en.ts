@@ -6,12 +6,22 @@ export const locale = {
             'SEARCHBAR_PLACEHOLDER': 'Help me with...',
             'SEARCH_BUTTON': 'Search',
             'ASK_BUTTON': 'Ask a Question',
-            'ALL_QUESTIONS': 'All Questions',
+            'ALL_QUESTIONS': '3 Most Popular Questions',
             'FILTER_BY': 'Filter by',
             'ASK': 'Ask',
             'CANCEL': 'Cancel',
             'TITLE_PLACEHOLDER': 'Question Title',
             'DESCRIPTION_PLACEHOLDER': 'Question Description',
+        },
+
+        'ASK_QUESTION': {
+            'ASK_BUTTON': 'Ask a Question',
+            'ASK': 'Ask',
+            'CANCEL': 'Cancel',
+            'TITLE_PLACEHOLDER': 'Question Title',
+            'DESCRIPTION_PLACEHOLDER': 'Question Description',
+            'DOMAIN': 'Domain'
         }
+        
     }
 };

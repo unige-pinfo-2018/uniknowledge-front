@@ -1,50 +1,58 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material';
-import { QuestionsService } from '../../../core/services/questions.service'
-import { questions } from '../../../core/models/index'
+import { QuestionsService } from '../../../core/services/questions.service';
+import { Question } from '../../../core/models/index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'uniKnowledge-askQuestion-dialog-my',
   templateUrl: 'askQuestionDialog.component.html',
 })
 export class AskQuestionDialogComponent {
-  question1: questions = new questions();
-  quesion1From: FormGroup;
-  errors: Object= {};
+  question: Question = new Question();
+  errors: Object = {};
+  description;
+  title;
+  domains;
+  selectedDomain;
 
   constructor(
     public dialogRef: MatDialogRef<AskQuestionDialogComponent>,
     @Inject(MAT_DIALOG_DATA)
-    @Inject(questions)
     public data: any,
     private questionsService: QuestionsService,
-    private fb: FormBuilder
-   ) 
-    {
-      //use the fb formbuilder to create a group
-      this.quesion1From = this.fb.group({
-        title: '',
-        body: '',
-      });
-      //
-     }
+    private fb: FormBuilder,
+    private router: Router
+  ) { 
+    this.domains = ['Biology', 'Chemistry', 'Math', 'Computer Science', 'Philosophy', 'Economy', 'Psychology', 'Medicine', 'Litterature'];
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  ngOnInit() {
-  //nothing for now
-  }
-
   submitForm() {
-    //post the question
-    this.questionsService.save(this.question1)
-    console.log(this.question1)
-    err => {
-      this.errors = err;
-    }
+
+    // Init Question Properties
+    this.question.title = this.title;
+    this.question.text = this.description;
+    this.question.domains = new Array<string>(this.selectedDomain);
+
+    // Push Question to Database
+    this.questionsService.save(this.question)
+    .subscribe(
+      data => {
+          console.log(data);
+          this.dialogRef.close();
+          window.location.reload();
+        },
+      err => {
+          console.log(err);
+          this.dialogRef.close();
+          window.location.reload();
+        }
+  );
   }
 
 

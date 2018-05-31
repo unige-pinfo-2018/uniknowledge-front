@@ -6,4 +6,5 @@ export class User {
   username: string;
   bio: string;
   profilePictureURL: string;
+  points: number;
 }
