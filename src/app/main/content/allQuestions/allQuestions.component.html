@@ -7,7 +7,7 @@
             <div fxFlex flexLayout="column" fxLayoutAlign="space-evenly start">
 
                 <!-- Search Part -->
-                <div fxFlex="30%" fxLayout="column" flexLayoutAlign="center">
+                <div fxFlex="45%" fxLayout="column" flexLayoutAlign="center">
                     <mat-card-title>
                         <h1>{{'ALL_QUESTIONS.SEARCH_QUESTION' | translate}}</h1>
                     </mat-card-title>
@@ -24,15 +24,13 @@
                 </div>
 
                 <!-- Filter Part-->
-                <div fxFlex="40%" fxLayout="column" flexLayoutAlign="center">
+                <div fxFlex="20%" fxLayout="column" flexLayoutAlign="center">
                     <mat-card-title>
                         <h1>{{'ALL_QUESTIONS.FILTER_BY' | translate}}</h1>
                     </mat-card-title>
                     <div fxLayout="row" fxLayoutAlign="space-between center">
-                        <button mat-raised-button id="institution">Institution</button>
-                        <button mat-raised-button id="date">Date</button>
-                        <button mat-raised-button id="popularity">Popularity</button>
-                        <button mat-raised-button id="domain">Domain</button>
+                        <button (click)="dateFilterClicked()" mat-raised-button id="date">Date</button>
+                        <button (click)="popularityFilterClicked()" mat-raised-button id="popularity">Popularity</button>
                     </div>
                 </div>
 
@@ -60,7 +58,7 @@
             <!-- Questions List Section-->
             <div fxLayout="column">
 
-                <h3 *ngIf="questions.length == 0">No Question found !</h3>
+                <h3 *ngIf="questions.length == 0" class="no-result">No Question found !</h3>
 
                 <!-- Question Item-->
                 <mat-card *ngFor="let question of questions" style="margin-bottom:20px;margin-right:25px;" class="no-padding" fxFlex="97%"
@@ -90,9 +88,17 @@
                     <!-- Answers Infos Sub-Section-->
                     <div fxFlex class="question-infos">
                         <mat-card-title>
-                            <h2>{{question.nbAnswers}}</h2>
+                            <h2>{{question.nbAnswers}} Answer(s)</h2>
                         </mat-card-title>
-                        <mat-card-subtitle>Answer(s)</mat-card-subtitle>
+                        <!-- <mat-card-subtitle>Answer(s)</mat-card-subtitle> -->
+                        <mat-card-subtitle>
+                        <button (click)="openAnswerQuestion(question.id)" mat-raised-button class="answer-button">
+                            Answer
+                        </button>
+                        <button (click)="openShowAnswers(question.id)" mat-raised-button class="show-button">
+                            Show
+                        </button>
+                    </mat-card-subtitle>
                     </div>
                     <div class="vl"></div>
                     <div fxFlex class="question-infos">
@@ -116,21 +122,25 @@
                 <div fxLayoutAlign="start start">
                     <mat-form-field style="margin-left: 80px;" fxFlex="200px">
                         <mat-select (change)="getQuestionsByDomain()" placeholder="Select a Domain" [(value)]="selectedDomain">
-                          <mat-option *ngFor="let domain of domains" [value]="domain">
-                            {{ domain }}
-                          </mat-option>
+                            <mat-option *ngFor="let domain of domains" [value]="domain">
+                                {{ domain }}
+                            </mat-option>
                         </mat-select>
-                      </mat-form-field>
+                    </mat-form-field>
                 </div>
             </div>
-            <div>
-                <mat-card *ngFor="let question of canYouAnswerQuestions" class="no-top-padding" fxFlex="100%">
+            <div fxLayout="column">
+                <h3 *ngIf="canYouAnswerQuestions.length == 0" class="no-result">No Question found !</h3>
+                <mat-card style="margin-bottom:20px;margin-right:25px;" *ngFor="let question of canYouAnswerQuestions" class="no-top-padding" fxFlex="100%">
                     <mat-card-title>
                         <h2>{{question.title}}</h2>
                     </mat-card-title>
                     <mat-card-subtitle>
                         {{question.text}}
                     </mat-card-subtitle>
+                    <button (click)="openAnswerQuestion(question.id)" mat-raised-button style="margin-left:410px;" class="answer-button">
+                        Answer Question
+                    </button>
                 </mat-card>
             </div>
         </div>

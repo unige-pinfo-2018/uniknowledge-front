@@ -25,6 +25,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuestionsService} from './core/services/questions.service'
 import { User } from './core/models';
 import { UniKnowledgeAskQuestionDialogModule } from './main/content/myQuestions/askQuestionDialog.module';
+import { UniKnowledgeAnswerQuestionDialogModule } from './main/content/allQuestions/answerQuestionDialog.module';
+import { UniKnowledgeShowAnswersDialogModule } from './main/content/allQuestions/showAnswersDialog.module';
+
 import { AuthGuard } from './core/services/auth-guard.service';
 
 
@@ -52,7 +55,11 @@ const appRoutes: Routes = [
         UniKnowledgeLoginModule,
         UniKnowledgeSearchBarModule,
         MatDialogModule,
-        UniKnowledgeAskQuestionDialogModule
+        UniKnowledgeAskQuestionDialogModule,
+        UniKnowledgeAnswerQuestionDialogModule,
+        UniKnowledgeShowAnswersDialogModule
+
+
 
     ],
     providers   : [

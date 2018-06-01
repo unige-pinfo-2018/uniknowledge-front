@@ -11,7 +11,6 @@ import { map } from 'rxjs/operators/map';
 export class QuestionsService {
 
   likedQuestions;
-
   constructor(
     private apiService: ApiService
   ) { }
@@ -25,6 +24,27 @@ export class QuestionsService {
         }
       )
     );
+  }
+
+  getAnswers(questionID): Observable<Question[]> {
+    return this.apiService.get('/posts-service/questions/' + questionID + '/answers').pipe(
+      map(
+        data => {
+          console.log(data);
+          return data;
+        }
+      )
+    );
+  }
+
+  saveAnswer(answer, questionID):Observable<any> {
+
+    return this.apiService.post('/posts-service/questions/' + questionID + '/answers', {'text': answer})
+    .pipe(map(
+      data => {
+        console.log(data);
+        return data;
+      }));
   }
 
   save(question): Observable<Question> {

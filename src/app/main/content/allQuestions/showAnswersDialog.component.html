@@ -1,0 +1,13 @@
+<div class="page-layout blank p-24" fxLayout="row" fxLayoutAlign="center start" uniKnowledgePerfectScrollbar>
+    <div fxLayout="column" fxLayoutAlign="start center">
+        <div fxLayout="row">
+            <mat-card></mat-card>
+        </div>
+        <div fxLayout="row">
+            <mat-dialog-actions fxFlex>
+                <button mat-button (click)="onNoClick()">Cancel</button>
+                <button mat-button (click)="submitForm()">Answer</button>
+            </mat-dialog-actions>
+        </div>
+    </div>
+</div>

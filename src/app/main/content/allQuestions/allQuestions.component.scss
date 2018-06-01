@@ -6,6 +6,11 @@
     width:100%;
 }
 
+.no-result {
+    text-align:center; 
+    color: gray; 
+    font-size: 25px;
+}
 .search-button {
     margin-top: 10px;
     background-color: rgb(86, 159, 255);
@@ -19,13 +24,28 @@
     color: white;
 }
 
+.answer-button {
+    font-size: 0.9vw;
+    margin-left: 20px;
+    background-color: rgb(86, 159, 255);
+    color: white;
+}
+
+.show-button {
+    font-size: 0.9vw;
+    margin-top: 15px;
+    margin-left: 20px;
+    background-color: rgb(255, 179, 86);
+    color: white;
+}
+
 #institution {
     background-color: rgb(24, 197, 249);
     color: white;
 }
 
 #date {
-    background-color: rgb(235, 163, 0);
+    background-color: rgb(162, 0, 222);
     color: white;
 
 }
