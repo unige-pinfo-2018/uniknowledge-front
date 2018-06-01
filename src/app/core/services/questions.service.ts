@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { ApiService } from './api.service';
@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators/map';
 
 @Injectable()
 export class QuestionsService {
+
+  likedQuestions;
 
   constructor(
     private apiService: ApiService
@@ -36,5 +38,14 @@ export class QuestionsService {
           console.log(data);
           return data;
         }));
+  }
+
+  like(id): Observable<string> {
+    return this.apiService.put('/posts-service/questions/' + id + '?action=upvote')
+    .pipe(map(
+      data => {
+        console.log(data);
+        return data;
+      }));
   }
 }

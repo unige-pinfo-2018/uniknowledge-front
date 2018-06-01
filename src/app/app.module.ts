@@ -19,6 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { UserService } from './core/services/user.service';
 import { ApiService } from './core/services/api.service';
 import { JwtService } from './core/services/jwt.service';
+import { SearchService } from './core/services/search.service';
 import { HttpTokenInterceptor } from './core/interceptors';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuestionsService} from './core/services/questions.service'
@@ -63,7 +64,8 @@ const appRoutes: Routes = [
         JwtService,
         QuestionsService,
         User,
-        AuthGuard
+        AuthGuard,
+        SearchService
     ],
     bootstrap   : [
         AppComponent

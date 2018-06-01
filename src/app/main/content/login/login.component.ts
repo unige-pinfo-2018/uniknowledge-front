@@ -110,6 +110,7 @@ export class UniKnowledgeLoginComponent implements OnInit {
                 },
                 err => {
                     this.loginFormErrors = err;
+                    alert('Wrong Username Or Password');
                     this.router.navigateByUrl('/login');
                 }
             );

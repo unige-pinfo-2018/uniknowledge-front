@@ -37,7 +37,7 @@ export class AskQuestionDialogComponent {
     // Init Question Properties
     this.question.title = this.title;
     this.question.text = this.description;
-    this.question.domains = new Array<string>(this.selectedDomain);
+    this.question.domain = this.selectedDomain;
 
     // Push Question to Database
     this.questionsService.save(this.question)

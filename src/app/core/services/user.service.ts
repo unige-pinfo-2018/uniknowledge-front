@@ -17,6 +17,7 @@ export class UserService {
   public currentUser = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
 
   public user: User = {
+    id: 0,
     email:  '',
     token: '',
     username: 'Coucou',

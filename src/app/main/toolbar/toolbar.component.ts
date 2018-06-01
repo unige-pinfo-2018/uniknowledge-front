@@ -79,6 +79,7 @@ export class UniKnowledgeToolbarComponent implements OnInit {
             data => {
                 console.log(data);
                 this.currentUser = data;
+                this.userService.user = this.currentUser;
             },
             err => {
                 console.log(err);
