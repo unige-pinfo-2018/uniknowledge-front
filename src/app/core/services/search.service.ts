@@ -14,7 +14,7 @@ export class SearchService {
     private apiService: ApiService
   ) { }
 
-  search(text): Observable<Question[]> {
+  search(text): Observable<any> {
 
     return this.apiService.post('/search-service', {'text': text})
       .pipe(map(

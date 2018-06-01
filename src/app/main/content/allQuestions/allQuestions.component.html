@@ -13,11 +13,11 @@
                     </mat-card-title>
                     <div fxLayout="row">
                         <mat-form-field class="searchbar">
-                            <input matInput placeholder="{{'ALL_QUESTIONS.SEARCHBAR_PLACEHOLDER' | translate}}">
+                            <input [(ngModel)]="searchText" matInput placeholder="{{'ALL_QUESTIONS.SEARCHBAR_PLACEHOLDER' | translate}}">
                         </mat-form-field>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="start center">
-                        <button mat-raised-button class="search-button">
+                        <button (click)="search()" mat-raised-button class="search-button">
                             {{'ALL_QUESTIONS.SEARCH_BUTTON' | translate}}
                         </button>
                     </div>
@@ -48,7 +48,7 @@
 
             <!-- Title + Ask Question Button Section-->
             <div fxLayoutAlign="start center">
-                <h1>{{'ALL_QUESTIONS.ALL_QUESTIONS' | translate}}</h1>
+                <h1 id="questions">{{'ALL_QUESTIONS.ALL_QUESTIONS' | translate}}</h1>
 
                 <div fxLayoutAlign="start start">
                     <button (click)="openAskQuestion()" mat-raised-button class="ask-button">
@@ -110,16 +110,26 @@
 
         <!-- Can you Answer Section-->
         <div fxFlex="40%" fxFlexAlign="start">
-            <div>
-                <h1>CAN YOU ANSWER ...</h1>
+            <div fxLayoutAlign="start center">
+                <h1 id="questions">Can You Answer ...</h1>
+
+                <div fxLayoutAlign="start start">
+                    <mat-form-field style="margin-left: 80px;" fxFlex="200px">
+                        <mat-select (change)="getQuestionsByDomain()" placeholder="Select a Domain" [(value)]="selectedDomain">
+                          <mat-option *ngFor="let domain of domains" [value]="domain">
+                            {{ domain }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
             </div>
             <div>
-                <mat-card class="no-top-padding" fxFlex="100%">
+                <mat-card *ngFor="let question of canYouAnswerQuestions" class="no-top-padding" fxFlex="100%">
                     <mat-card-title>
-                        <h2>Titre Question</h2>
+                        <h2>{{question.title}}</h2>
                     </mat-card-title>
                     <mat-card-subtitle>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...
+                        {{question.text}}
                     </mat-card-subtitle>
                 </mat-card>
             </div>

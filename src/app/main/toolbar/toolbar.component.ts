@@ -35,11 +35,6 @@ export class UniKnowledgeToolbarComponent implements OnInit {
                 'title': 'English',
                 'flag': 'us'
             },
-            {
-                'id': 'fr',
-                'title': 'Français',
-                'flag': 'fr'
-            }
         ];
 
         this.selectedLanguage = this.languages[0];

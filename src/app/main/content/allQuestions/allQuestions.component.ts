@@ -11,6 +11,7 @@ import { UserService } from '../../../core/services/user.service';
 import { SearchService } from '../../../core/services/search.service';
 
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 @Component({
     selector   : 'uniKnowledge-allQuestions',
     templateUrl: './allQuestions.component.html',
@@ -23,27 +24,52 @@ export class UniKnowledgeAllQuestionsComponent implements OnInit
         private dialog: MatDialog, 
         private questionService: QuestionsService,
         private userService: UserService,
-        private searchService: SearchService
+        private searchService: SearchService,
+        private router: Router
     )
     {
         this.translationLoader.loadTranslations(english, french);
         this.action = this.getUrlParameter('action');
+        this.domains = ['Biology', 'Chemistry', 'Math', 'Computer Science', 'Philosophy', 'Economy', 'Psychology', 'Medicine', 'Litterature'];
+
     }
 
+    domains;
     action;
+    selectedDomain;
+    searchText;
     currentUserId;
-    questions: Question[];
+    canYouAnswerQuestions: Question[] = [];
+    questions: Question[] = [];
     askDialogRef: MatDialogRef<AskQuestionDialogComponent>;
     
     ngOnInit(): void {
-        this.getAllQuestions('');
+        this.getAllQuestions();
     }
+
+    getQuestionsByDomain() {
+        this.questionService
+        .get('?domain=' + this.selectedDomain)
+        .subscribe(
+            data => {
+                console.log(data);
+                this.canYouAnswerQuestions = data;
+            },
+            err => {
+                console.log(err);
+            }
+        );    }
     
     openAskQuestion() {
       this.askDialogRef = this.dialog.open(AskQuestionDialogComponent, {
         height: '500px',
         width: '600px',
       });
+    }
+
+    search() {
+        this.router.navigateByUrl('/questions?action=search&text=' + this.searchText);
+        window.location.reload();
     }
 
     getAllQuestions() {
@@ -55,8 +81,17 @@ export class UniKnowledgeAllQuestionsComponent implements OnInit
         .subscribe(
             data => {
                 console.log(data);
-                this.questions = data;
-            },
+                
+                data.hits.hits.forEach(element => {
+
+                    console.log(element);
+                    if (element._index === 'questions') {
+                        this.questions.push(element._source);
+                    }
+                });
+
+                const el = document.getElementById('questions');
+                el.innerText = 'Search result(s) for "' + this.getUrlParameter('text') + '"';            },
             err => {
                 console.log(err);
             }
