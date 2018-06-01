@@ -200,11 +200,14 @@ export class UniKnowledgeAllQuestionsComponent implements OnInit
         );
     }
     
-    getUrlParameter(param) {
-        return decodeURIComponent(window.location.search.substring(1)).split('&')
-         .map((v) => { return v.split("=") })
-         .filter((v) => { return (v[0] === param) ? true : false })
-         .reduce((prev, curv, index, array) => { return curv[1]; }, undefined); 
+    getUrlParameter(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) { return null; }
+            if (!results[2]) { return ''; }
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
       };
     
 }
