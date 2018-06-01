@@ -73,9 +73,11 @@ export class UniKnowledgeAllQuestionsComponent implements OnInit
 
     openShowAnswers(questionID) {
         this.showAnswerDialogRef = this.dialog.open(ShowAnswersDialogComponent, {
-          data: {
-             'questionID': questionID
-          }
+            height: '600px',
+            width: '800px',
+            data: {
+                'questionID': questionID
+            }
         });
       }
 

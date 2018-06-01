@@ -1,13 +1,30 @@
-<div class="page-layout blank p-24" fxLayout="row" fxLayoutAlign="center start" uniKnowledgePerfectScrollbar>
-    <div fxLayout="column" fxLayoutAlign="start center">
-        <div fxLayout="row">
-            <mat-card></mat-card>
-        </div>
-        <div fxLayout="row">
-            <mat-dialog-actions fxFlex>
-                <button mat-button (click)="onNoClick()">Cancel</button>
-                <button mat-button (click)="submitForm()">Answer</button>
-            </mat-dialog-actions>
+<div *ngIf="isDataLoaded" class="page-layout blank p-24" fxLayout="row" fxLayoutAlign="center start" uniKnowledgePerfectScrollbar>
+    <div fxFlex="100%" fxFlexAlign="start">
+        <div fxLayout="column">
+            <h2>Answers</h2>
+            <mat-card *ngFor="let answer of answers" style="margin-bottom:20px;margin-right:25px;" class="no-padding" fxFlex="97%" fxLayoutAlign="space-between center">
+                <!-- Question Sub-Section-->
+                <div fxFlex="50%">
+                    <mat-card-title>
+                        <h2>{{answer.created}}</h2>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        {{answer.text}}
+                    </mat-card-subtitle>
+                </div>
+
+                <div class="vl"></div>
+
+                <!-- Asked By Sub-Section-->
+                <div fxFlex="25%" class="question-infos">
+                    <mat-card-title>
+                        <h2>Answered By</h2>
+                    </mat-card-title>
+                    <mat-card-subtitle>{{answer.author.firstName}} {{answer.author.lastName}}</mat-card-subtitle>
+                </div>
+
+                <div class="vl"></div>
+            </mat-card>
         </div>
     </div>
 </div>

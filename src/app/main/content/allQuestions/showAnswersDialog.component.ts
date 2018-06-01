@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'uniKnowledge-show-answers-dialog',
-  templateUrl: 'answerQuestionDialog.component.html',
+  templateUrl: 'showAnswersDialog.component.html',
 })
 export class ShowAnswersDialogComponent implements OnInit{
   question: Question = new Question();
@@ -17,6 +17,8 @@ export class ShowAnswersDialogComponent implements OnInit{
   domains;
   selectedDomain;
   answer;
+  answers;
+  isDataLoaded;
 
   constructor(
     public dialogRef: MatDialogRef<ShowAnswersDialogComponent>,
@@ -27,7 +29,7 @@ export class ShowAnswersDialogComponent implements OnInit{
     private router: Router
   ) { 
     this.domains = ['Biology', 'Chemistry', 'Math', 'Computer Science', 'Philosophy', 'Economy', 'Psychology', 'Medicine', 'Litterature'];
-    this.answer = this.data;
+    this.isDataLoaded = false;
   }
 
   onNoClick(): void {
@@ -35,17 +37,17 @@ export class ShowAnswersDialogComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log(this.data);
-    // Push Question to Database
+  
+    // Get answers from DB
     this.questionsService.getAnswers(this.data.questionID)
     .subscribe(
       data => {
-          console.log(data);
-          this.dialogRef.close();
+          this.answers = data;
+          console.log(this.answers);
+          this.isDataLoaded = true;
         },
       err => {
           console.log(err);
-          this.dialogRef.close();
         }
   );
   }  
