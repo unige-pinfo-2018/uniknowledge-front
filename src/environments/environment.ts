@@ -6,6 +6,6 @@
 export const environment = {
     production: false,
     hmr       : false,
-    api_url: 'http://uniknowledge.ch:8080'
+    api_url: 'https://uniknowledge.ch:8080'
 
 };
