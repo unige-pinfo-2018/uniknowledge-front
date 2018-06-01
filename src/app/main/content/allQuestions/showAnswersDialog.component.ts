@@ -52,10 +52,3 @@ export class ShowAnswersDialogComponent implements OnInit{
   );
   }  
 }
-
-
-
-
-
-
-}
